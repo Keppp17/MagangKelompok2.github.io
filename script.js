@@ -100,67 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-// /* ==========================================
-//        LOGIKA CAROUSEL (SMOOTH SCROLL)
-//        ========================================== */
-//     const trackContainer = document.querySelector(".carousel-track-container");
-//     const track = document.getElementById("carouselTrack");
-//     const prevBtn = document.getElementById("prevBtn");
-//     const nextBtn = document.getElementById("nextBtn");
 
-//     if (trackContainer && track) {
-//         const slide = track.querySelector(".carousel-slide");
-//         if (!slide) return;
-
-//         // Hitung jarak geser (lebar 1 kartu + gap)
-//         const getScrollAmount = () => slide.offsetWidth + 20;
-
-//         // Fungsi helper untuk scroll secara smooth
-//         const smoothScrollBy = (amount) => {
-//             trackContainer.scrollBy({
-//                 left: amount,
-//                 behavior: 'smooth'
-//             });
-//         };
-
-//         // Tombol Next (Kanan)
-//         if (nextBtn) {
-//             nextBtn.addEventListener("click", () => {
-//                 smoothScrollBy(getScrollAmount());
-//             });
-//         }
-
-//         // Tombol Prev (Kiri)
-//         if (prevBtn) {
-//             prevBtn.addEventListener("click", () => {
-//                 smoothScrollBy(-getScrollAmount());
-//             });
-//         }
-
-//         // Auto Play
-//         let autoPlayTimer = setInterval(() => {
-//             const isEnd = trackContainer.scrollLeft + trackContainer.clientWidth >= trackContainer.scrollWidth - 10;
-//             if (isEnd) {
-//                 trackContainer.scrollTo({ left: 0, behavior: 'smooth' });
-//             } else {
-//                 smoothScrollBy(getScrollAmount());
-//             }
-//         }, 3000);
-
-//         // Pause saat hovered
-//         trackContainer.addEventListener("mouseenter", () => clearInterval(autoPlayTimer));
-//         trackContainer.addEventListener("mouseleave", () => {
-//             autoPlayTimer = setInterval(() => {
-//                 const isEnd = trackContainer.scrollLeft + trackContainer.clientWidth >= trackContainer.scrollWidth - 10;
-//                 if (isEnd) {
-//                     trackContainer.scrollTo({ left: 0, behavior: 'smooth' });
-//                 } else {
-//                     smoothScrollBy(getScrollAmount());
-//                 }
-//             }, 3000);
-//         });
-//     }
-// });
 window.addEventListener('load', () => {
     const openingScreen = document.getElementById('opening-screen');
     const spans = document.querySelectorAll('#wave-text span');
