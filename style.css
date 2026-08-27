@@ -8,10 +8,12 @@
             --bg-light: #F9F6F0;
         }
         @font-face {
-            font-family: 'Basko'; /* Give your font a custom name */
-            src: url('Boska_Complete/Fonts/TTF/Boska-Variable.ttf') format('truetype'); /* Path to your font file */
-            font-weight:bolder;
+            font-family: 'Basko';
+            /* Hapus '/' di awal path */
+            src: url('Fonts/Boska-Variable.ttf') format('truetype');
+            font-weight: normal 900;
             font-style: normal;
+            font-display: swap;
         }
         html {
         scroll-behavior: smooth;
@@ -58,12 +60,12 @@
         }
 
         nav .logo {
-            color: var(--accent-light);
+           color: var(--accent-light);
             font-size: 40px;
             font-weight: 12;
             z-index: 10;
-            font-family: Basko;
-            font-weight: bold;
+            font-family: 'Basko', serif;
+            font-weight: bold; 
         }
 
         #menu-toggle {
