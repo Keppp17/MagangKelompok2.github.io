@@ -161,3 +161,40 @@ document.addEventListener('DOMContentLoaded', () => {
 //         });
 //     }
 // });
+window.addEventListener('load', () => {
+    const openingScreen = document.getElementById('opening-screen');
+    const spans = document.querySelectorAll('#wave-text span');
+    
+    let currentIndex = 0;
+    const totalChars = spans.length;
+    const waveSpeed = 220;
+
+    setTimeout(() => {
+        const waveInterval = setInterval(() => {
+            // Hapus kelas 'active' dari semua huruf
+            spans.forEach(span => span.classList.remove('active'));
+
+            if (currentIndex < totalChars) {
+                // Perbesar huruf saat ini secara in-place (di tempat)
+                spans[currentIndex].classList.add('active');
+                currentIndex++;
+            } else {
+                clearInterval(waveInterval);
+
+                // Kembalikan semua huruf ke ukuran seragam yang menyala
+                spans.forEach(span => {
+                    span.style.fontSize = "6rem";
+                    span.style.opacity = "1";
+                    span.style.textShadow = "0 0 20px rgba(210, 100, 55, 0.8)";
+                });
+
+                // Tutup layar opening secara mulus
+                setTimeout(() => {
+                    if (openingScreen) {
+                        openingScreen.classList.add('fade-out');
+                    }
+                }, 800);
+            }
+        }, waveSpeed);
+    }, 300);
+});
